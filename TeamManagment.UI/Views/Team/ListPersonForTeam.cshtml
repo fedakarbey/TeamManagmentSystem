@@ -1,0 +1,36 @@
+﻿@using TeamManagment.UI.Models.Core.Entites
+@model List<Kisi>
+
+<h1>Takım Yönetim Sistemi</h1>
+<div class="col-md-6">
+</div>
+<br />
+<div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Adı</th>
+                <th>Soyadı</th>
+                <th>Ekle</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var kisi in Model)
+            {
+            <tr>
+                <td>@kisi.KisiID</td>
+                <td>@kisi.Ad</td>
+                <td>@kisi.Soyad</td>
+                <td>
+                    <form asp-controller="Team" asp-action="AddPerson" method="post">
+                        <input type="hidden" name="kisiID" value="@kisi.KisiID" />
+                        <input type="hidden" name="takimID" value="@ViewBag.takimBilgisi" />
+                        <button class="btn btn-success" value="">Takıma Ekle</button>
+                    </form>
+                </td>
+            </tr>
+            }
+    </table>
+</div>

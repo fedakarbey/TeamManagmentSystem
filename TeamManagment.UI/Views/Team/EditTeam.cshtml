@@ -1,0 +1,128 @@
+﻿@using TeamManagment.UI.Models.Core.Entites
+@model List<TakimKisi>
+@if (TempData["EklendiMesaji"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["EklendiMesaji"]
+    </div>
+}
+@if (TempData["SilindiMesaji"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SilindiMesaji"]
+    </div>
+}
+
+
+<h1>Takım Yönetim Sistemi</h1>
+<br />
+<div class="table-responsive">
+    <table class="table table-bordered" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th width="25%">Takım Lideri</th>
+                <th width="25%">Analist</th>
+                <th width="25%">Developer</th>
+                <th width="25%">Tester</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td width="25%">
+                    @Model.Count(a => a.Kisi.Unvan.UnvanID == 1)
+                    <br />
+                    <form asp-controller="Team" asp-action="ListPersonForTeam" method="post">
+                        <input type="hidden" name="unvanID" value="1" />
+                        <input type="hidden" name="takimID" value="@ViewBag.takimBilgisi" />
+                        <button id="lider" type="submit" class="btn btn-success">Ekle</button>
+                    </form>
+                </td>
+                <td width="25%">
+                    @Model.Count(a => a.Kisi.Unvan.UnvanID == 2)
+                    <br />
+                    <form asp-controller="Team" asp-action="ListPersonForTeam" method="post">
+                        <input type="hidden" name="unvanID" value="2" />
+                        <input type="hidden" name="takimID" value="@ViewBag.takimBilgisi" />
+                        <button id="analist" type="submit" class="btn btn-success">Ekle</button>
+                    </form>
+                </td>
+                <td width="25%">
+                    @Model.Count(a => a.Kisi.Unvan.UnvanID == 3)
+                    <br />
+                    <form asp-controller="Team" asp-action="ListPersonForTeam" method="post">
+                        <input type="hidden" name="unvanID" value="3" />
+                        <input type="hidden" name="takimID" value="@ViewBag.takimBilgisi" />
+                        <button id="dev" type="submit" class="btn btn-success">Ekle</button>
+                    </form>
+                </td>
+                <td width="25%">
+                    @Model.Count(a => a.Kisi.Unvan.UnvanID == 4)
+                    <br />
+                    <form asp-controller="Team" asp-action="ListPersonForTeam" method="post">
+                        <input type="hidden" name="unvanID" value="4" />
+                        <input type="hidden" name="takimID" value="@ViewBag.takimBilgisi" />
+                        <button id="tester" type="submit" class="btn btn-success">Ekle</button>
+                    </form>
+                </td>
+            </tr>
+    </table>
+</div>
+<div class="col-md-6">
+</div>
+<br />
+<div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Adı</th>
+                <th>Soyadı</th>
+                <th>Unvan</th>
+                <th>Ekle</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var kisi in Model)
+            {
+                <tr>
+                    <td>@kisi.Kisi.KisiID</td>
+                    <td>@kisi.Kisi.Ad</td>
+                    <td>@kisi.Kisi.Soyad</td>
+                    <td>@kisi.Kisi.Unvan.UnvanAdi</td>
+                    <td>
+                        <form asp-controller="Team" asp-action="RemoveFromTeam" method="post">
+                            <input type="hidden" name="kisiID" value="@kisi.Kisi.KisiID" />
+                            <input type="hidden" name="takimID" value="@ViewBag.takimBilgisi" />
+                            <button class="btn btn-danger">Takımdan Çıkart</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+    </table>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    var unvanID1Count = @Model.Count(a => a.Kisi.Unvan.UnvanID == 1);
+    if (unvanID1Count > 0) {
+        document.querySelector('#lider').style.display = "none";
+    }
+
+    var unvanID2Count = @Model.Count(a => a.Kisi.Unvan.UnvanID == 2);
+    if (unvanID2Count > 1) {
+        document.querySelector("#analist").style.display = "none";
+    }
+
+    var unvanID3Count = @Model.Count(a => a.Kisi.Unvan.UnvanID == 3);
+    if (unvanID3Count > 4) {
+        document.querySelector("#dev").style.display = "none";
+    }
+
+    var unvanID4Count = @Model.Count(a => a.Kisi.Unvan.UnvanID == 4);
+    if (unvanID4Count > 0) {
+        document.querySelector("#tester").style.display = "none";
+    }
+
+    });
+</script>

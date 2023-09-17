@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamManagment.UI", "TeamManagment.UI\TeamManagment.UI.csproj", "{E37ACD04-AE35-4398-AD14-5040DD8528F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamManagment.Api", "TeamManagment.Api\TeamManagment.Api.csproj", "{FFB3BB8A-F151-4EC0-9747-CF5426039F75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E37ACD04-AE35-4398-AD14-5040DD8528F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E37ACD04-AE35-4398-AD14-5040DD8528F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E37ACD04-AE35-4398-AD14-5040DD8528F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E37ACD04-AE35-4398-AD14-5040DD8528F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFB3BB8A-F151-4EC0-9747-CF5426039F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFB3BB8A-F151-4EC0-9747-CF5426039F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFB3BB8A-F151-4EC0-9747-CF5426039F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFB3BB8A-F151-4EC0-9747-CF5426039F75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC30475B-0205-4A6F-8430-514C1D98B616}
+	EndGlobalSection
+EndGlobal

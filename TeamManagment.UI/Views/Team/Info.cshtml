@@ -1,0 +1,23 @@
+﻿<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+@{
+    var sonuc = Convert.ToBoolean(TempData["response"]);
+    int forJq = 0;
+    if (sonuc)
+    {
+        forJq = 1;
+    }
+}
+<script>
+        $(document).ready(function () {
+            if (@forJq == 1) {
+                $('body').css('color', 'green'); 
+            } else {
+                $('body').css('color', 'red');
+            }
+        });
+</script>
+<body>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nulla quam, condimentum accumsan condimentum at, ornare eu magna. Aenean viverra diam id eros interdum, a consectetur mauris malesuada. Mauris tristique nibh nec nisl tempus, sit amet fringilla enim scelerisque. In vitae ante ut tellus condimentum cursus at a metus. Sed arcu augue, finibus vitae pellentesque nec, dapibus a felis. Nullam accumsan ante non lobortis scelerisque. Mauris a erat nisi. Curabitur vestibulum venenatis magna vel rutrum. In augue tellus, varius sed fringilla vulputate, dictum at nisi. In imperdiet orci ut nulla hendrerit, sit amet semper eros dignissim.
+</body>

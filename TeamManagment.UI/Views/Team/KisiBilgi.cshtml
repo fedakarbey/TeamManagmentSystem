@@ -1,0 +1,53 @@
+﻿
+@model List<KisiBilgiDTO>
+
+<script>
+    @{
+        bool apiResult = ViewBag.donenCevap;
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+        var pTags = document.querySelectorAll('text-body');
+        if (apiResult == true) {
+            pTags.forEach(function (pTag) {
+                pTag.classList.replace("text-body", "text-success");
+            });
+            }
+        else {
+            pTags.forEach(function (pTag) {
+                pTag.classList.replace("text-body", "text-danger");
+            });
+            }
+    });
+
+   
+
+       
+
+</script>
+
+<html>
+<body>
+    <p class="text-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nulla quam, condimentum accumsan condimentum at, ornare eu magna. Aenean viverra diam id eros interdum, a consectetur mauris malesuada. Mauris tristique nibh nec nisl tempus, sit amet fringilla enim scelerisque. In vitae ante ut tellus condimentum cursus at a metus. Sed arcu augue, finibus vitae pellentesque nec, dapibus a felis. Nullam accumsan ante non lobortis scelerisque. Mauris a erat nisi. Curabitur vestibulum venenatis magna vel rutrum. In augue tellus, varius sed fringilla vulputate, dictum at nisi. In imperdiet orci ut nulla hendrerit, sit amet semper eros dignissim.
+        <br />
+        Integer sollicitudin odio at arcu blandit varius. Etiam eget blandit ligula, in bibendum nulla. Curabitur vitae dapibus eros, id consectetur velit. Curabitur id velit id lorem porttitor gravida. Mauris feugiat interdum ante, a pulvinar eros feugiat eu. Integer ultrices convallis commodo. Nam sit amet porttitor eros. Ut posuere enim cursus, iaculis est id, consectetur mauris. Fusce a tortor risus. Morbi dapibus interdum lacus. Mauris tempus maximus tortor at pellentesque. Integer et lobortis velit. In risus sem, dignissim et scelerisque ut, iaculis et augue.
+        <br />
+        Maecenas finibus, risus eget faucibus pulvinar, quam nisi pulvinar dolor, ac eleifend erat purus at massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc in velit dignissim, varius ante eu, aliquam lacus. Proin malesuada malesuada lobortis. Nam in nisl et metus ornare tempor. Vestibulum sit amet turpis vel augue fringilla viverra. Proin dictum ipsum a metus sodales sodales. Ut faucibus enim arcu. Phasellus eu magna tortor. Sed fringilla massa magna, varius tristique ipsum condimentum sed. Proin vehicula varius faucibus. Praesent dolor magna, scelerisque nec sollicitudin at, rhoncus id nibh. Donec et sem pretium, porttitor purus sed, sodales augue.
+        <br />
+        Curabitur aliquam tortor nisl, eget dictum ex bibendum sed. Fusce eu velit in metus hendrerit elementum. Morbi ornare mauris nulla, eu pretium diam maximus ut. Nam ac magna et est luctus pharetra. Proin pellentesque quam sed pellentesque pellentesque. Morbi purus elit, hendrerit et nisl in, egestas eleifend est. Curabitur metus odio, scelerisque venenatis sapien quis, tincidunt tempor purus. Proin hendrerit aliquet est ac malesuada. Sed sit amet arcu in nunc dignissim semper non at felis. In porta ipsum at metus molestie viverra. Fusce ac sodales diam. Vestibulum posuere ac ipsum sed vestibulum. Sed et ornare nibh.
+        <br />
+        Sed luctus tristique lacus non eleifend. Etiam in feugiat dolor. Praesent ipsum odio, rutrum vitae diam at, placerat sagittis ante. Cras sit amet bibendum diam. Aenean viverra porttitor condimentum. Vestibulum porta, magna a porttitor convallis, leo purus fermentum lacus, aliquam lobortis erat nisl eget nunc. Donec vestibulum arcu non vulputate efficitur. Nulla in ante id sapien faucibus rhoncus sit amet sit amet diam. Nulla venenatis sem a consequat accumsan. Suspendisse risus tellus, pretium pharetra sapien sed, condimentum consectetur dolor. Mauris malesuada magna nec dolor tempus, in consectetur quam porttitor. Suspendisse accumsan sem a metus bibendum bibendum. Proin tincidunt lobortis convallis. Quisque et quam arcu. Curabitur ac laoreet ligula. Mauris hendrerit ante a turpis faucibus ullamcorper.
+        <br />
+        In hac habitasse platea dictumst. In vehicula enim eu commodo rutrum. Nam ornare facilisis augue, ut eleifend urna tincidunt non. Cras sit amet malesuada leo. Donec volutpat dolor convallis risus condimentum, viverra vulputate nisl vehicula. Nulla a massa arcu. Vivamus ac risus rhoncus, condimentum eros in, fermentum magna. Aenean sed eros in nisl maximus faucibus in sit amet eros.
+        <br />
+        Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris gravida in tortor porta vehicula. Vivamus elementum tincidunt dignissim. Proin aliquet et ipsum non porta. Integer eu dui at ipsum volutpat commodo. Morbi iaculis faucibus diam, et viverra neque efficitur nec. Proin vel eros urna. In vulputate interdum nisi quis finibus. Aliquam vel neque eu nisl semper sagittis.
+        <br />
+        Duis egestas vehicula nunc, eu vestibulum tortor suscipit eu. Mauris et rhoncus justo. Praesent porta iaculis est nec aliquet. Vivamus in imperdiet nibh, a lacinia nisl. Ut sodales tempor turpis, quis porta leo tempus tempus. Etiam auctor finibus ex vel bibendum. Mauris pretium aliquam nunc. Phasellus bibendum enim et scelerisque scelerisque. Praesent accumsan turpis non ex pretium, et rhoncus quam ultricies. Cras eu interdum nibh. Nunc auctor tincidunt mollis. Morbi eget magna vel libero ullamcorper luctus. Curabitur hendrerit venenatis felis, a fringilla velit convallis at. Vestibulum vel tincidunt elit.
+        <br />
+        Sed id suscipit magna. Nulla et erat viverra, tristique dolor ac, molestie diam. Aenean sapien augue, feugiat id finibus bibendum, euismod sed nulla. Proin sollicitudin sit amet mi vitae pretium. Donec commodo blandit odio vulputate auctor. Fusce eleifend dictum lectus, in eleifend tellus egestas varius. Fusce elit nisi, blandit id aliquet eu, volutpat sit amet ante. In ac dictum neque. Aliquam efficitur dignissim aliquam. Vestibulum a velit ac ante mollis ultricies.
+        <br />
+        Sed sollicitudin purus enim, pulvinar porttitor purus lobortis vestibulum. Nulla facilisi. Sed auctor nunc nisl, sed vulputate lectus tincidunt id. Phasellus aliquam gravida lacus, et mattis arcu pellentesque at. Proin consectetur facilisis rhoncus. Praesent accumsan dignissim nisl at pellentesque. In odio nibh, faucibus vitae sapien ac, hendrerit luctus quam. Suspendisse potenti. Proin pretium maximus erat et pretium.
+    </p>
+</body>
+</html>
+

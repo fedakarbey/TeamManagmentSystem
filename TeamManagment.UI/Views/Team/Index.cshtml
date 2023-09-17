@@ -1,0 +1,35 @@
+﻿@using TeamManagment.UI.Models.Core.Entites
+@model List<Takim>
+@if (TempData["HataMesaji"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["HataMesaji"]
+    </div>
+}
+
+<h1>Takım Yönetim Sistemi</h1>
+<div class="col-md-6">
+</div>
+<br />
+<div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Takım Adı</th>
+                <th>Düzenle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var takim in Model)
+            {
+                <tr>
+                    <td>@takim.TakimID</td>
+                    <td>@takim.TakimAdi</td>
+                    <td>
+                        <a asp-controller="Team" asp-action="EditTeam" asp-route-id="@takim.TakimID" class="btn btn-primary">Düzenle</a>
+                    </td>
+                </tr>
+            }
+    </table>
+</div>
